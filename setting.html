@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="setting.css">
+<style>
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 550px;
+  }
+  .button2 {background-color: #008CBA;}
+
+</style>
+
+</head>
+
+<body>
+
+  <button class="button button2" onclick="backhome()">Back to home</button>
+  
+  <div id="Account" onclick="document.getElementById('id01').style.display='block'" style="text-align: center;">
+    <h1 style="margin-left: 0px;;">Your Account</h1>
+    <div id="security" onclick="editprof()" style="margin-left:500px;" >
+      <div style="width: 25%; float: left;">
+        <img src="images/security.png" style="width: auto; height: 70px;" >
+      </div>
+      <div style="width: 75%; float: right;">
+        <h3>Login & security</h3>
+        <span>Edit login, name, and mobile </span>
+        <span>number</span>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!--Login & security form-->
+  <div id="id01" class="modal">
+
+    <form class="modal-content animate" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <img src="image/login.jpg"id="preview" alt="Avatar" class="avatar"><br>
+        <input type="file"  onchange="loadFile(event)" accept=".jpg, .jpeg, .png">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" id="t3" placeholder="Enter Username" name="uname" required>
+
+        <label for="Lpsw"><b>Email Address</b></label>
+        <input type="email" id="t2" placeholder="Enter Last Password" name="Lpsw" required>
+
+        <label for="Npsw"><b>New Password</b></label>
+        <input type="password" id="t4" placeholder="Enter New Password" name="Npsw" required>
+
+        <label for="Rpsw"><b>Repeat Password</b></label>
+        <input type="password" id="t5" placeholder="Repeat New Password" name="Rpsw" required>
+
+        <button id="btn-confirm-security" onclick=" setting(event)" type="button">Confirm</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-left: 50px;"> Remember me
+        </label>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+          class="btn-cancel-security">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+
+  <br><br><br><br><br><br>
+ 
+
+  <script>
+   function backhome()
+   {
+     location.replace("Index.html")
+   }
+  </script>
+ 
+
+  <script src="setting.js"></script>
+
+</body>
+
+</html>

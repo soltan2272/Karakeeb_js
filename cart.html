@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Shopping Cart</title>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      font-family: 'Comfortaa', cursive;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width:100vw;
+      margin: 0 auto;
+      margin-top:20vh ;
+
+    }
+
+    .container>h1 {
+
+      padding: 20px 0;
+
+    }
+
+    .cart {
+      display: flex;
+    }
+
+    .products {
+
+      flex: 0.75;
+    }
+
+    .product {
+      margin-top: 2vh;
+      display: flex;
+      width: 72vw;
+      height: 30vh;
+      overflow: hidden;
+      border: 1px solid silver;
+      margin-bottom: 20px;
+
+    }
+
+    .product:hover {
+      border: none;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      transform: scale(1.01);
+
+    }
+
+    .product>img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product>img:hover {
+      transform: scale(1.04);
+    }
+
+    .product-info {
+      padding: 20px;
+      width: 100%;
+      position: relative;
+
+    }
+
+    .product-name,
+    .product-price,
+    .product-offer {
+
+      margin-bottom: 20px;
+
+    }
+
+    .product-remove {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 25px;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+
+    }
+
+    .product-remove:hover {
+
+      background-color: green;
+      color: white;
+      font-weight: 600;
+
+    }
+
+    .product-quantity>input {
+      width: 40px;
+      padding: 5px;
+      text-align: center;
+
+    }
+    .fa {
+      margin-right: 5px;
+    }
+
+    .cart-total {
+      flex: 0.25;
+      margin-left: 20px;
+      padding: 20px;
+      height: 35vh;
+      border: 1px solid silver;
+      border-radius: 5px;
+      margin-top: 2vh;
+    }
+
+    .cart-total p {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      font-size: 20px;
+
+    }
+
+    .cart-total a {
+      display: block;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      background-color: green;
+      color: white;
+      text-decoration: none;
+
+    }
+
+    .cart-total a:hover {
+
+      background-color: red;
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container-fluid" onmouseover=" edititm() ">
+    <div class="row">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+          <img src="images/kara.png"  style="width: 15%;  height: auto;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a id="ahome" class="nav-link" aria-current="page" href="Index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a style="font-size:1.1vw;" id="anewproduct" class="nav-link " href="addproduct.html">New Product</a>
+              </li>
+         
+
+              <li class="nav-item">
+                <a style="font-size:1.1vw;" id="acontact" href="contact.html" class="nav-link">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="cart.html"><i id="acart" style="font-size: 2.5vw;" class="bi bi-cart-check-fill "></i> <span
+                    class="text-light cn" id="count"></span></a></a>
+              </li>
+
+            </ul>
+            <form class="d-flex">
+              <input id="se1" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-danger" onclick="search1()" type="button">Search</button>&ensp; 
+            </form>
+            <span class="user" id="visible1">
+              <a href="login.html"  style="color: white;" class="btn btn-outline-dark"> <i class="fa fa-sign-in" aria-hidden="true"></i>  Sign in </a>&ensp; 
+              <a href="Register.htmll"style="color: white;" class="btn btn-outline-dark"> <i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</a>
+            </span>
+            <span class="user" id="visible2" >
+              <a href="setting.html"style="color: white;"class="btn btn-outline-dark"> <i class="fa fa-user-plus" aria-hidden="true"></i> Setting</a>
+              <a href="index.html" onclick="logout()"style="color: white;"class="btn btn-outline-dark"> <i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a>
+            </span>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="container">
+  
+      <h1 style="text-align: center;">Shopping Cart</h1>
+      <div class="cart" style="width: 100%;">
+        <div id="dis" class="products">
+        
+  
+  
+  
+        </div>
+  
+        <div id="mon" class="cart-total">
+          <p>
+  
+            <span onclick="edititm()">Total Price</span>
+  
+            <span id="totalprice"></span>
+  
+          </p>
+  
+          <p>
+            <span >Number of Items</span>
+            <span id="numberofitems" ></span>
+          </p>
+  
+          <a href="fatora.html">Proceed to Checkout</a>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  </div>
+  
+  <script>
+    function search1(){
+      search("se1");
+    }
+    var count=localStorage.getItem("count");
+    var mydiv=document.getElementById("dis");
+    var ids=localStorage.getItem("ids");
+    var nids=ids.split(",");
+    if(localStorage.getItem("addedd")!=null)
+{
+  var dis=' <div class="product">  <img src="'+localStorage.getItem("imgsrc")+'"> <div class="product-info">    <h3 class="product-name">'+localStorage.getItem("pname") +'</h3> '+
+        '  <h4 id=p'+localStorage.getItem("pid")+' class="product-price">'+localStorage.getItem("Price")+' EG</h4> <p class="product-quantity">Qnt: <input id="'+localStorage.getItem("pid")+'"  min="1" onchange="edititm()" type="number" value="1" name=""> '+
+               ' <p class="product-remove">  <i class="fa fa-trash" aria-hidden="true"  onclick="delitm('+localStorage.getItem("pid")+')">  Remove</i>   </p>   </div> </div><br>'
+               mydiv.innerHTML+=dis;
+}
+    console.log(nids[0]);
+    if(count>0)
+    {
+        
+        for(var i=0;i<nids.length;i++)
+        {
+          
+            var xhr=new XMLHttpRequest();
+            var lnk="https://fakestoreapi.com/products/"+nids[i];
+            console.log(lnk);
+             xhr.open("get",lnk);
+             xhr.send();
+             check(xhr);
+             
+            
+        }
+  
+     function check(xhr)
+     {
+             xhr.addEventListener('readystatechange',function()
+    {
+  
+       if(xhr.readyState==4 && xhr.status==200)
+       {
+        var res=JSON.parse(xhr.response);
+        console.log(res);
+        
+        var id=res.id;
+       // console.log(id);
+        var title =res.title;
+        var price=res.price;
+        var des=res.description;
+        var img=res.image;  
+      
+        
+         var dis=' <div class="product">  <img src="'+img+'"> <div class="product-info">    <h3 class="product-name">'+title+'</h3> '+
+        '  <h4 id=p'+id+' class="product-price">'+price+' EG</h4> <p class="product-quantity">Qnt: <input id="'+id+'"  min="1" onchange="edititm()" type="number" value="1" name=""> '+
+               ' <p class="product-remove">  <i class="fa fa-trash" aria-hidden="true"  onclick="delitm('+id+')">  Remove</i>   </p>   </div> </div><br>'
+               mydiv.innerHTML+=dis;
+       }
+    })
+    
+  }
+        }
+        function show()
+        {
+          edititm()
+        }
+  
+        function delitm(id)
+        {
+         
+       localStorage.removeItem("item"+id);
+        var ids=localStorage.getItem("ids");
+        if(id>=100)
+           {
+            
+             localStorage.removeItem("addedd");
+        }
+
+        console.log(ids[0]);
+        var nids=ids.split(",");
+        for(var j=0;j<nids.length;j++)
+        {
+            console.log(ids[j])
+           if(nids[j]==id)
+           {
+           
+               console.log(ids[j])
+              var str= ids.replace(nids[j],0)
+               console.log(str[j])
+               localStorage.setItem("ids",str);
+               var c=parseInt(localStorage.getItem("count"));
+               c--;
+               localStorage.setItem("count",c);
+               console.log(ids[j]);
+               location.reload();
+  
+        }
+        }
+  
+        }
+  
+        
+        function edititm()
+        {
+         //   var quantity =parseInt(document.getElementById(id).value);
+            var ids=localStorage.getItem("ids");
+             var nids=ids.split(",");
+            var sum=0;
+            var nofitems=0;
+            var quants=[];
+            var addquan=0;
+            var count=parseInt(localStorage.getItem("count"));
+            console.log(nids);
+            
+           console.log(document.getElementById(nids[0]));
+            for(var i=0;i<nids.length;i++)
+            {
+              if(nids[i]==0)
+              continue;
+              console.log(nids[i])
+              if(nids[i]>=100)
+              {
+                addquan=parseInt(document.getElementById(nids[i]).value);
+                localStorage.setItem("addquan",addquan);
+                
+              }
+              var quant =parseInt(document.getElementById(nids[i]).value);
+              nofitems+=quant;
+              quants.push(quant);
+              console.log(quant)
+              var pid="p"+nids[i];
+              var pr =parseFloat((document.getElementById(pid)).innerText);
+              console.log(pr)
+              sum+=quant*pr;
+              localStorage.setItem("totalprice",sum);
+            localStorage.setItem("numitms",nofitems);
+            localStorage.setItem("quants",quants);
+            }
+            
+            document.getElementById("totalprice").innerText=sum;
+            document.getElementById("numberofitems").innerText=nofitems;
+           
+            
+        //  document.getElementById("mon").innerHTML=quantity*prc;
+          /*  console.log(parseInt(document.getElementById("mon").innerText))
+          if(isNaN(parseInt(document.getElementById("mon").innerText)))
+           {
+            document.getElementById("mon").innerHTML=quantity*prc;
+           }
+           else
+           {
+               var eq=parseInt(document.getElementById("mon").innerText);
+               var calc=eq+(quantity*prc);
+               document.getElementById("mon").innerHTML=calc;
+           }*/
+          
+        }
+      
+        
+  
+
+   
+  </script>
+
+
+
+
+  <script src="script.js"></script>
+ 
+  
+
+</body>
+
+
+</html>

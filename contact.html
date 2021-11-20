@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+  
+  
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive;
+
+        }
+
+       
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+
+        }
+
+        input[type="submit"] {
+            background-color: #0d6efd;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 30%;
+        }
+
+        .container {
+            padding: 16px;
+
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        #allcont {
+            margin-top: 20vh;
+            width: 50%;
+            position: absolute;
+            left: 25%;
+        }
+
+        select {
+            width: 100%;
+            height: 45px;
+            font-size: 16px;
+
+        }
+
+        textarea {
+            width: 100%;
+            font-size: 16px;
+
+
+        }
+
+        #cover {
+            width: 100%;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+
+        .cancelbtn {
+            width: 100%;
+        }
+
+        .cart {
+            width: 40px;
+            height: 30px;
+            padding-top: 0%;
+            margin-top: 0%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                    <div class="container-fluid">
+                        <img src="images/kara.png"  style="width: 15%;  height: auto;">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                                <li class="nav-item">
+                                    <a id="ahome" class="nav-link" aria-current="page" href="Index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a style="font-size:1.1vw;" id="anewproduct" class="nav-link "
+                                        href="addproduct.html">New Product</a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a style="font-size:1.1vw;" id="acontact" href="contact.html"
+                                        class="nav-link active text-primary  ">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="cart.html"><i id="acart" style="font-size: 2.5vw;" class="bi bi-cart-check-fill "></i> <span
+                                        class="text-light cn" id="count"></span></a></a>
+                                  </li>
+
+                            </ul>
+                            <form class="d-flex">
+                                <input id="se1" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-danger" onclick="search1()" type="button">Search</button>&ensp; 
+                              </form>
+                              <span class="user" id="visible1">
+                                <a href="login.html"  style="color: white;" class="btn btn-outline-dark"> <i class="fa fa-sign-in" aria-hidden="true"></i>  Sign in </a>&ensp; 
+                                <a href="Register.html"style="color: white;" class="btn btn-outline-dark"> <i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</a>
+                              </span>
+                              <span class="user" id="visible2" >
+                                <a href="setting.html"style="color: white;"class="btn btn-outline-dark"> <i class="fa fa-user-plus" aria-hidden="true"></i> Setting</a>
+                                <a href="index.html" onclick="logout()"style="color: white;"class="btn btn-outline-dark"> <i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a>
+                              </span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="allcont">
+
+                    <div class="container">
+                        <form action="Index.html">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                            <label for="country">City</label>
+                            <select id="country" name="country">
+                                <option value="Cairo">Cairo</option>
+                                <option value="Giza">Giza</option>
+                                <option value="Alex">Alex</option>
+                                <option value="Assuit">Assuit</option>
+                                <option value="sohag">sohag</option>
+                                <option value="Qena">Qena</option>
+                                <option value="Luxor">Luxor</option>
+                                <option value="Asswan">Asswan</option>
+                            </select>
+                            <br>
+                            <br>
+
+                            <label for="subject">Subject</label>
+                            <textarea id="subject" name="subject" placeholder="Write something.."
+                                style="height:25vh"></textarea>
+
+                            <input type="submit" value="Send">
+                        </form>
+                    </div>
+
+
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+  <script>
+    visable();
+    function search1(){
+      search("se1");
+    }
+  </script>
+</body>
+
+</html>

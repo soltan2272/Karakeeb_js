@@ -1,0 +1,299 @@
+* {
+  
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: montserrat;
+}
+
+.navbar {
+  position: fixed;
+  height: 20vh;
+  z-index: 99;
+}
+
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+  position: relative;
+  right: 250px;
+
+}
+
+#navbarDropdown {
+  margin-top: 3.8vh;
+}
+
+ul a {
+  color: white;
+}
+
+#user {
+  float: left;
+  position: relative;
+  left: 1125px;
+  top: 20px;
+  color: white;
+  font-size: 17px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  width: 40%;
+
+  position: absolute;
+  top: 150px;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+
+
+}
+
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+
+}
+
+a.active,
+a:hover {
+  background: white;
+}
+
+#anewproduct,
+#acart,
+#acontact,
+#ahome {
+  color: white;
+}
+
+#anewproduct:hover,
+#acart:hover,
+#acontact:hover,
+#ahome:hover {
+  color: #0d6efd;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+
+
+
+  #check:checked~ul {
+    left: 0;
+  }
+}
+
+section {
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: arial;
+  float: left;
+  max-width: 28.15vw;
+  max-height: 80vh;
+  border: 1px solid silver;
+  margin: 2.4%;
+  z-index: 3;
+}
+
+#divo {
+  margin-top: 25vh;
+
+}
+
+.card:hover {
+  /* border: none; */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(.85);
+
+
+}
+
+img {
+
+  max-width: 400px;
+  height: 300px;
+  max-height: 300px;
+}
+
+
+
+
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color:#0d6efd;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  height: 50px;
+}
+
+.card button:hover {
+  opacity: 0.8;
+}
+
+
+
+option {
+  text-align: left;
+  font-size: 18px;
+}
+
+.cart {
+  width: 40px;
+  height: 30px;
+  padding-top: 0%;
+  margin-top: 0%;
+
+}
+
+/* footer */
+#dleft {
+  width: 30%;
+  height: 350px;
+  margin-top: 25px;
+  margin-left: 10px;
+  float: left;
+}
+
+#dleft>p {
+  font-family: Segoe UI;
+  font-weight: bold;
+  color: white;
+}
+
+.middel {
+  /* background-color: turquoise; */
+  width: 13%;
+  height: 350px;
+  margin-top: 25px;
+  margin-left: 20px;
+  float: left;
+}
+
+.middel>p {
+  font-family: Segoe UI;
+  font-weight: bold;
+  color: white;
+}
+
+hr {
+  width: 80%;
+  height: 4px;
+  margin-left: 0px;
+  background-color: white;
+}
+
+.first {
+  padding-bottom: 5px;
+  color: white;
+}
+
+
+.first:hover {
+  color: blue;
+}
+
+#dright {
+  width: 38%;
+  height: 350px;
+  margin-top: 25px;
+  margin-left: 10px;
+  float: left;
+}
+
+.RP {
+  font-family: Segoe UI;
+  font-weight: bold;
+  color: white;
+}
